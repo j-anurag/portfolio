@@ -1,4 +1,5 @@
 Title,TechStack,Description,Link
+DataLens AI,"React, Node.js, Express, MongoDB, Tailwind, Vite, LangChain, Groq","Intelligent, full-stack data analysis platform. Bridges gap between complex datasets and actionable insights using LLMs and ReAct agents. Features advanced EDA, visualization, and RAG.",https://github.com/anuragj-2003/DataLens-AI-Data-Analyst
 Deep Research Agent,"Python, LangGraph, LangChain, Groq, Tavily","Autonomous research assistant with ReAct-based web scraping, RAG, and multi-modal report generation.",https://github.com/anuragj-2003/deep-research-agent
 AI Workspace,"React, FastAPI, LangChain, Groq, SQLite","Full-stack GenAI research/chat platform with hybrid RAG, web search, and secure authentication.",https://github.com/anuragj-2003/genai_rag_app
 Microservices Python App,Python,"Scalable and modular application managing multiple microservices using Docker and Kubernetes. Integrates CI/CD pipelines.",https://github.com/anuragj-2003/Microservice-Python-App

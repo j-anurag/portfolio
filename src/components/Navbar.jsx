@@ -73,10 +73,11 @@ const Navbar = () => {
           transition: all 0.3s ease;
         }
         .navbar.scrolled {
-          background: rgba(10, 10, 10, 0.8);
+          background: var(--navbar-bg);
           backdrop-filter: blur(10px);
           padding: 1rem 0;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          border-bottom: 1px solid var(--navbar-border);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
         .nav-container {
           display: flex;
@@ -118,7 +119,7 @@ const Navbar = () => {
           flex-direction: column;
           gap: 1.5rem;
           align-items: center;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          border-bottom: 1px solid var(--navbar-border);
         }
         
         @media (min-width: 768px) {
