@@ -50,12 +50,14 @@ function App() {
   return (
     <div className="app">
       <Navbar contact={data.contact} />
-      <Hero details={data.details} contact={data.contact} />
-      <Skills skills={data.skills} />
-      <Education education={data.education} />
-      <Experience experience={data.experience} />
-      <Projects projects={data.projects} />
-      <Contact contact={data.contact} />
+      <div className="main-timeline-container">
+        <Hero details={data.details} contact={data.contact} />
+        <Skills skills={data.skills} />
+        <Education education={data.education} />
+        <Experience experience={data.experience} />
+        <Projects projects={data.projects} />
+        <Contact contact={data.contact} />
+      </div>
       <Footer />
     </div>
   );

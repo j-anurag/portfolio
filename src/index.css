@@ -1,0 +1,285 @@
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #e5e5e5;
+    --accent-color: #3b82f6;
+    --secondary-bg: #171717;
+    --card-bg: #262626;
+    --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --navbar-bg: rgba(10, 10, 10, 0.8);
+    --navbar-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 5rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    background: linear-gradient(to right, #fff, #999);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Global Timeline Styles */
+.main-timeline-container {
+    position: relative;
+    max-width: 1280px;
+    /* Slightly wider to accommodate padding */
+    margin: 0 auto;
+    padding-left: 3rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-timeline-container>section {
+    position: relative;
+}
+
+.main-timeline-container>section::before {
+    content: '';
+    position: absolute;
+    left: -3rem;
+    /* 3rem padding + 2px border correction approx */
+    top: 5rem;
+    /* Align with section padding-top usually */
+    width: 16px;
+    height: 16px;
+    background: var(--accent-color);
+    border: 4px solid var(--bg-color);
+    border-radius: 50%;
+    transform: translateX(-50%) translateX(-1px);
+    /* Center on border */
+    z-index: 10;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #000000;
+        /* Pure black for maximum contrast */
+        --secondary-bg: #f5f5f5;
+        --card-bg: #ffffff;
+        --navbar-bg: rgba(255, 255, 255, 0.95);
+        /* Slightly more opaque */
+        --navbar-border: rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        background: linear-gradient(to right, #000000, #333333);
+        /* Darker gradient */
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .project-card {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .tech-tag {
+        /* Default style for skill tag in light mode if not overridden later */
+        background: rgba(0, 0, 0, 0.08);
+        color: #000000;
+        font-weight: 600;
+    }
+
+    .project-content p {
+        color: #1a1a1a;
+        /* Almost black */
+    }
+
+    .search-input {
+        background: #f0f0f0;
+        border: 2px solid #3b82f6 !important;
+        /* BLUE BORDER ALWAYS */
+        color: #000000;
+        font-weight: 500;
+    }
+
+    .search-input:focus {
+        background: #ffffff;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+    }
+
+    .search-icon {
+        color: #333333;
+    }
+
+    .nav-link {
+        color: #000000;
+        font-weight: 600;
+    }
+
+    .nav-link:hover {
+        color: var(--accent-color);
+    }
+
+    /* Global overrides for all card-like components */
+    .project-card,
+    .skill-category,
+    .timeline-content,
+    .edu-card,
+    .contact-info {
+        background: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .project-card:hover,
+    .skill-category:hover,
+    .timeline-content:hover,
+    .edu-card:hover {
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Contact Form Inputs */
+    .form-group input,
+    .form-group textarea {
+        background: #f0f0f0 !important;
+        color: #000000 !important;
+        border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        background: #ffffff !important;
+        border-color: var(--accent-color) !important;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5) !important;
+    }
+
+    /* Secondary text visibility - High Contrast */
+    .bio,
+    .footer-container,
+    .duration,
+    .edu-card h4,
+    .contact-info p,
+    .form-group label {
+        color: #404040 !important;
+    }
+
+    .social-links a {
+        color: #171717 !important;
+    }
+
+    /* Specific user requested fixes */
+    .timeline-content p {
+        color: #000000 !important;
+        /* Experience body dark */
+    }
+
+    /* Skills under project - highlighted and dark */
+    .tech-tag {
+        background: #e0f2fe !important;
+        /* Light blue highlight */
+        color: #0c4a6e !important;
+        /* Dark blue/black text */
+        font-weight: 700 !important;
+    }
+
+    .skill-tag {
+        background: #f3f4f6 !important;
+        color: #000000 !important;
+        font-weight: 600;
+    }
+
+    /* Top-level Timeline connector lines */
+    .main-timeline-container {
+        border-left: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .main-timeline-container>section::before {
+        border-color: var(--bg-color);
+        /* Matches white body */
+    }
+
+    /* Inner Timeline connector line visibility (Experience section) */
+    .timeline::before {
+        background: rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-timeline-container {
+        padding-left: 1.5rem;
+        border-left-width: 2px;
+    }
+
+    .main-timeline-container>section::before {
+        left: -1.5rem;
+        width: 12px;
+        height: 12px;
+        top: 5rem;
+    }
+}
